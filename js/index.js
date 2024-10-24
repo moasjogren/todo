@@ -31,11 +31,15 @@ function toggleItemCompleted(id) {
 }
 
 function deleteToDo(index) {
+  const todoElement = document.querySelector(`.todo[data-id='${index}']`)
+  todoElement.classList.add('fade')
   let filterArray = UI.filter((todo) => {
     return todo.id !== index
   })
-  UI = filterArray
-  renderUI()
+  setTimeout(() => {
+    UI = filterArray
+    renderUI()
+  }, 600)
 }
 
 function renderUI() {
@@ -43,15 +47,20 @@ function renderUI() {
   UI.forEach(({ id, task, completed }) => {
     const todoElement = document.createElement('div')
     todoElement.classList.add('todo')
+    todoElement.setAttribute('data-id', id)
     if (completed) todoElement.classList.add('completed')
-    todoElement.addEventListener('click', () => toggleItemCompleted(id))
+    todoElement.addEventListener('click', (e) => {
+      if (e.target.classList[0] !== 'delete') toggleItemCompleted(id)
+    })
     const todoText = document.createElement('p')
     todoText.classList.add('info')
     todoText.textContent = task
     const todoButton = document.createElement('p')
     todoButton.classList.add('delete')
     todoButton.textContent = 'X'
-    todoButton.addEventListener('click', () => deleteToDo(id))
+    todoButton.addEventListener('click', (e) => {
+      if (e.target.classList[0] === 'delete') deleteToDo(id)
+    })
     todoElement.appendChild(todoText)
     todoElement.appendChild(todoButton)
     todoList.appendChild(todoElement)

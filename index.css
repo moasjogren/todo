@@ -74,7 +74,13 @@ body {
   rotate: 10deg;
   padding: 20px;
   cursor: pointer;
-  transition: all 1s linear;
+  transition: all 0.5s linear;
+  opacity: 1;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(50vh) rotate(70deg);
 }
 .todo::before,
 .todo::after {
