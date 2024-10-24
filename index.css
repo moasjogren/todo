@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Quattrocento:wght@400;700&family=Quicksand:wght@300..700&display=swap');
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
 }
 
 body {
@@ -9,20 +12,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(247, 237, 106);
+  background-color: rgb(194, 192, 174);
 }
 
 .container {
-  width: 70%;
-  margin-top: 25%;
+  width: 60%;
+  margin-top: 15%;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 .add-container {
+  display: flex;
   width: 100%;
   justify-content: space-between;
-  display: flex;
 }
 .add-container input {
   padding: 10px 20px;
@@ -41,7 +44,7 @@ body {
 .add {
   padding: 10px;
   border-radius: 10px;
-  background-color: rgb(135, 180, 135);
+  background-color: rgb(96, 196, 96);
   width: 25%;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -57,7 +60,7 @@ body {
 .todos {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 .todo {
   display: flex;
@@ -67,14 +70,31 @@ body {
   margin: 20px;
   border-radius: 10px 0px 10px 0px;
   text-align: center;
-  background-color: white;
+  background-color: rgb(231, 243, 123);
   rotate: 10deg;
   padding: 20px;
   cursor: pointer;
+  transition: all 1s linear;
 }
-
+.todo::before,
+.todo::after {
+  content: '';
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background-color: red;
+  border-radius: 50%;
+  top: -15px;
+  right: 50%;
+}
+.todo::after {
+  height: 20px;
+  width: 20px;
+  transform: translateX(2px);
+  border: 1px solid rgb(104, 81, 81);
+}
 .todo.completed {
-  background-color: #f1f1f1;
+  background-color: #8d8f86;
 }
 
 .todo.completed .info {
@@ -89,11 +109,11 @@ body {
 .delete {
   border: none;
   background: none;
-  font-weight: bold;
   color: red;
   font-size: 1.5rem;
   cursor: pointer;
   text-decoration: none;
+  font-family: 'DynaPuff', system-ui;
 }
 .delete:hover {
   scale: 1.1;
