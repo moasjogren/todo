@@ -13,6 +13,7 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: rgb(194, 192, 174);
+  overflow: hidden;
 }
 
 .container {
