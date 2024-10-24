@@ -73,10 +73,19 @@ body {
   cursor: pointer;
 }
 
+.todo.completed {
+  background-color: #f1f1f1;
+}
+
+.todo.completed .info {
+  text-decoration: line-through;
+}
+
 .info {
   font-weight: bold;
   font-size: 1.5rem;
 }
+
 .delete {
   border: none;
   background: none;
@@ -84,6 +93,7 @@ body {
   color: red;
   font-size: 1.5rem;
   cursor: pointer;
+  text-decoration: none;
 }
 .delete:hover {
   scale: 1.1;

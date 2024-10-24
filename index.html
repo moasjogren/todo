@@ -9,27 +9,13 @@
   <body>
     <div class="container">
       <div class="add-container">
-        <input type="text" placeholder="add todo..." />
-        <button class="add">Lägg till</button>
+        <form class="todoForm">
+          <input type="text" placeholder="add todo..." name="todoText" />
+          <button class="add">Lägg till</button>
+        </form>
       </div>
-      <div class="todos">
-        <div class="todo">
-          <p class="info">Test</p>
-          <button class="delete">X</button>
-        </div>
-        <div class="todo">
-          <p class="info">Vattna</p>
-          <button class="delete">X</button>
-        </div>
-        <div class="todo">
-          <p class="info">Test</p>
-          <button class="delete">X</button>
-        </div>
-        <div class="todo">
-          <p class="info">Test</p>
-          <button class="delete">X</button>
-        </div>
-      </div>
+      <div class="todos"></div>
     </div>
+    <script src="/js/index.js"></script>
   </body>
 </html>
